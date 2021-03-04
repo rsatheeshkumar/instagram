@@ -38,7 +38,6 @@ const getRequest = () => {
       })
       .catch((error) => {
         const errMsg = error.message;
-        console.log(errMsg);
         dispatch(fetchUserError(errMsg));
       });
   };

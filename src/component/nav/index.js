@@ -8,8 +8,8 @@ import "./index.scss";
 
 const Navbar = () => {
   return (
-    <div className="navigation mt-0 w-100">
-      <nav className="navbar navbar-light">
+    <nav className="navbar navbar-light navigation">
+      <div className="container-fluid">
         <div className="d-flex justify-content-between w-100 mt-2">
           <p className="navbar-brand w-25 instagram">Instagram</p>
           <form className="d-flex w-50">
@@ -35,8 +35,8 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

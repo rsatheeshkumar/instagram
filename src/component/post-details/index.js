@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineLike } from "react-icons/ai";
-import { FaListUl, FaRegComment, FaUserEdit } from "react-icons/fa";
+import { FaRegComment, FaUserEdit } from "react-icons/fa";
+import Comments from "../comments/index";
 
 import "./index.scss";
 
 const PostsDetails = ({ post }) => {
   // console.log(post.fields.imageurl[0].thumbnails.full.url);
-  // const image = post.fields.imageurl[0].thumbnails.full.url;
-  const { full } = post.fields.imageurl[0].thumbnails;
+  const image = post.fields.imageurl[0].url;
+  // const { full } = post.fields.imageurl[0].thumbnails;
+
   return (
     <div className="card-group m-5">
       <div className="col">
         <div className="card">
           <img
-            src={full.url}
+            src={image}
             width={200}
             height={200}
             className="card-img-top"
@@ -25,9 +27,9 @@ const PostsDetails = ({ post }) => {
               <FaRegComment className="comment" />
               <FaUserEdit className="edit" />
             </div>
-            <p className="card-text mt-4">
-              This is a wider card with supporting text.
-            </p>
+            <div className="card-text mt-4">
+              <Comments />
+            </div>
             <p className="card-text">
               <small className="text-muted">Last updated 3 mins ago</small>
             </p>

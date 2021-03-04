@@ -4,10 +4,10 @@ import Profile from "../profile";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Profile />
-    </div>
+    </>
   );
 };
 

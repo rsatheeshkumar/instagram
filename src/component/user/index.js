@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 const User = ({ users, OnFetchRequest }) => {
   useEffect(() => {
     OnFetchRequest();
-  }, []);
+  }, [OnFetchRequest]);
   return (
     <div>
       <UserDetail key={users.id} user={users} />

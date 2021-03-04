@@ -2,27 +2,16 @@ import "./App.css";
 import Home from "./component/home";
 import Login from "./component/login";
 
-import { Route, Switch } from "react-router-dom";
-// import { useState } from "react";
-// import { Provider } from "react-redux";
-// import { store } from "./redux/store";
+import { useState } from "react";
 
-function App() {
-  // const [isLogin, setIsLoggedin] = useState(false);
+const App = () => {
+  const [isLoggedIn, setIsLoggedin] = useState(true);
 
-  //const onLogin=(status)={
-  // setIsLoggedin(status)
+  const onLogin = () => {
+    setIsLoggedin(true);
+  };
 
-  return (
-    <div className="app">
-      {/* {isLoggedIn ? <DashBoard /> : <Login onLogin={onLogin} />} */}
-
-      <Switch>
-        <Route exact path="/" render={() => <Login />} />
-        <Route path="/home" component={Home} />
-      </Switch>
-    </div>
-  );
-}
+  return <>{isLoggedIn ? <Home /> : <Login onLogin={onLogin} />}</>;
+};
 
 export default App;
